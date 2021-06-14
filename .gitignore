@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# 忽略pycharm运行时, 产生的.idea
+.idea
+# 忽略mac系统下, 产生的.DS_Store文件
+.DS_Store
