@@ -1,6 +1,6 @@
 # TODO: 调用 config 配置文件
 from flask import Flask, session
-from .config import Production, Development
+from config import Production, Development
 
 app = Flask(__name__)
 
@@ -14,6 +14,7 @@ def index():
     session['name'] = 'NextHeartbeat'
     # 读取配置
     print(app.config.get('PERMANENT_SESSION_LIFETIME'))
+    print(app.config.get('ENV'))
     return 'index_config'
 
 
