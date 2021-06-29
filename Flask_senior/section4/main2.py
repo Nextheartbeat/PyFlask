@@ -1,5 +1,5 @@
 # TODO: 访问限制
-import functools
+from functools import wraps
 from flask import Flask, session, g, abort
 
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app.secret_key = 'Nextheartbeat'
 
 
 def login_required(f):
-    @functools.wraps(f)
+    @wraps(f)
     def wrapper(*args, **kwargs):
         if g.is_login:
             return f(*args, **kwargs)
